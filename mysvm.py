@@ -1,11 +1,11 @@
 from sklearn import svm
 import numpy as np
-
-train_path = "./Encoding_result/train_ptm.txt"
+train_path = "./Encoding_result/train_ptmForPAAC.txt"
+#train_path = "./Encoding_result/train_ptm.txt"
 #train_path = "/content/drive/MyDrive/PTM_Project/iLearn_AbirModifiedFinal/Encoding_result/train_ptm.txt"
-test_path = "./Encoding_result/test_ptm.txt"
+#test_path = "./Encoding_result/test_ptm.txt"
 #test_path = "/content/drive/MyDrive/PTM_Project/iLearn_AbirModifiedFinal/Encoding_result/test_ptm.txt"
-
+test_path = "./Encoding_result/test_ptmForPAAC.txt"
 # read and convert train path data to numpy array
 train_data = np.loadtxt(train_path, delimiter=',')
 #print (train_data[:])
@@ -55,11 +55,11 @@ from sklearn.metrics import plot_confusion_matrix
 #plt.show()
 
 from sklearn.metrics import accuracy_score
-accuracy_score(test_label, y_pred)
+print(accuracy_score(test_label, y_pred))
 
 from sklearn.metrics import classification_report
 print(classification_report(test_label, y_pred))
 
 from sklearn.metrics import plot_roc_curve
 plot_roc_curve(clf, test_features, test_label) 
-
+plt.show()
